@@ -1,0 +1,393 @@
+@font-face {
+  	font-family: merriweather;  
+  	src: url("/fonts/merriweather.woff2");
+  	font-display: swap;
+}
+
+h1, h2, h3, a {
+  	font-family: merriweather, georgia, sans-serif;
+}
+
+body {
+    background-image: url("img/alaska.png");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+	background-size: cover;
+	margin:0;
+  	padding: 0;
+}
+
+.titre{
+	text-align: center;
+	color: white;
+}
+
+a{
+	cursor:pointer;
+	text-decoration: none;
+	color: #2b1d0e;
+}
+
+a:hover {
+  	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  	-webkit-mask-size: 200%;
+  	animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+section{
+	margin: 40px;	
+}
+
+.entete{	
+	text-align: center;	
+	padding:10px;
+	margin:5px;	
+  	border-radius: 5px;
+}
+
+#firstpage{
+	width:100%;
+	margin-left: auto;
+    margin-right: auto;
+    text-align : justify;
+}
+
+#apropos,#presentation{
+	color:white;
+}
+
+#apropos{
+	text-align:center;
+}
+
+#presentation{
+	text-align:justify;
+}
+
+.Admin{
+	color:white;
+	display: block;
+	text-align: right;
+	margin-right: 40px;
+}
+
+.articles{
+	background-color: #EAF4F3;
+	border-radius: 5px;
+	padding:10px;	
+	width:100%;
+	margin-left: auto;
+    margin-right: auto;
+    text-align : justify;
+}
+
+.commentaires{
+	background-color: #EAF4F3;
+	border-radius: 5px;
+	padding: 5px;
+	margin:10px;
+}
+
+.ajoutbillet, .voirbillet, #retourAcc, #listsignals, #deconect{
+	display: block;
+	text-align: right;
+	margin-right: 70px;
+	font-weight: bold;
+	color: white;
+}
+
+.boutons{
+	display: flex;	
+}
+
+#editer{
+	/*display : block;*/
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	padding:1px 20px;
+	background-color: white;
+ 	color: black;	
+	left:1090px;
+	position : relative;
+	/*margin-top : -20px;*/	
+	text-align : center;
+	font-size:0.90em;
+}
+
+.notification{
+	color: white;
+	font-weight: bold;
+}
+
+.formulaire{
+	margin-left: 50px;
+}
+
+input[type=submit], input[type=reset] {
+ 	width:100px;
+ 	margin-left:5px;
+ 	border-radius: 5px;
+ 	cursor:pointer;
+ 	transition-duration: 0.4s;
+ 	background-color: white;
+ 	color: black;
+ 	border: 2px solid #e7e7e7;
+ }
+
+input[type=submit]:hover{
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  	-webkit-mask-size: 200%;
+  	animation: shine 2s infinite;
+ 	
+}
+
+#signaler, #supprimer{
+	position: relative;
+	left:1080px;
+	color: #8b0000;
+	border-radius: 5px;	
+}
+
+#signaler{
+	left:1150px;
+}
+
+#designal{
+	color:#8b0000;
+	background-color: #e7e7e7;
+	border-radius: 5px;
+	text-align: left;
+	padding: 2px;
+	position: relative;
+	left: 10px;
+	font-size:0.9em;
+	
+}
+
+#signaler:hover{
+	background-color: #8b0000;
+	color: white;
+}
+
+#retourA, #listeComment{
+	color : #990000;
+}
+
+#liens{
+	display : flex;
+	text-align: right;
+	margin-left:560px;	
+}
+
+#pageinconnue{
+	color: white;
+}
+
+@media only screen /*iPhone X*/
+and (device-width : 375px) 
+and (device-height : 812px) 
+and (-webkit-device-pixel-ratio : 3) {
+	
+	#editer{	
+   		left:80px;	
+  		padding:1px 10px;  	
+  	}
+	
+	#supprimer{
+		left:100px;
+	}	
+		
+	#signaler{
+	left:120px;
+	}
+}
+
+@media only screen /*iPhone 6, 7, & 8*/
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+	
+	#editer{ 				
+  		left:60px;	
+  		padding:1px 10px;  	
+  	}
+  	
+  	.articles{
+		width:auto;
+	}
+	
+	
+	
+	#supprimer{
+		left:100px;
+	}
+	
+	#liens{		
+		margin-left: 60px; 
+		width:auto;   	
+	}
+	
+	#signaler{
+	left:120px;
+	}
+	
+}
+
+@media only screen /*iphone 5, , 5S, 5C and 5SE*/
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2){
+  
+  	#editer{  				
+  		left:30px;	
+  		padding:1px 10px;  	
+  	}
+  	
+  	#liens{
+		display : inline;
+		text-align: center;
+		width:auto;		
+		margin-left: 10px;
+    	margin-right: auto;
+	}
+	
+	.articles{
+		width:auto;
+	}
+	
+	.titreArticle{
+		text-align: center;
+	}
+	
+	#supprimer{
+		left:20px;
+	}
+	
+	#signaler{
+	left:100px;
+	}
+	
+	body{
+	 	
+	 	background-position: center center;
+	}
+  }
+  
+  @media screen /* Galaxy S4, S5 and Note 3 */
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+  
+  	#liens{	
+  		width:auto;	
+		margin-left: 50px;    	
+	}
+  
+  	#editer{  			
+  		left:80px;  			
+  		padding:1px 20px;	  	
+  	}
+  
+  	#supprimer{
+		left:250px;
+	}
+	
+	.articles{
+		width:auto;
+	}
+	
+	#signaler{
+	left:130px;
+	}
+  }
+  
+  @media only screen /* Nokia lumia */
+   and (max-width: 360px) {
+   
+    #supprimer{    	
+		left:40px;
+	}
+	
+	#editer{  		
+  		margin-left:10px;
+  		display:inline;  
+  		position:relative;
+  		left:70px;	  	
+  	}
+  	
+  	.articles{
+		width:auto;
+	}
+	
+	#liens{
+		flex-direction: column;
+		text-align: center;
+		/*width:auto;*/	
+		width:100%;
+		margin-left: 10px;
+    	margin-right: auto;
+	}
+	
+	#signaler{
+	left:100px;
+	}
+  }
+  
+ @media only screen /*iPad Pro */
+ and (min-device-width: 834px) 
+ and (max-device-width: 1112px)
+ and (-webkit-min-device-pixel-ratio: 2) {
+ 	#supprimer{
+		left:700px;
+	}
+	
+	#editer{  		
+  		 		
+  		left:800px;	
+  		padding:1px 20px;
+   	}
+   	
+   	#signaler{
+	left:700px;
+	}
+}
+  
+@media only screen /*iPad*/
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+   	#supprimer{
+		left:500px;
+	}
+	
+	#signaler{
+	left:500px;
+	}
+	
+	#editer{  		
+  		
+  		left:550px;	
+  		padding:1px 20px;
+   	}
+   	
+   	
+#liens{
+	display : flex;
+	text-align: right;
+	margin-left:200px;	
+}
+   	
+   	
+   
+}
