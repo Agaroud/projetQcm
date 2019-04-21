@@ -2,9 +2,9 @@
 
 namespace App\src\model\DAO;
 
-use App\src\model\Comment;
+use App\src\model\Proposition;
 
-class CommentDAO extends DAO
+class PropositionDAO extends DAO
 {
     public function getCommentsFromBillet($idBillet)
     {
@@ -65,12 +65,10 @@ class CommentDAO extends DAO
 
     private function buildObject(array $row)//nous permet de convertir chaque champ de la table en propriété de notre objet Comment
     {
-        $comment = new Comment();
-        $comment->setId($row['id']);
-        $comment->setPseudo($row['pseudo']);
-        $comment->setContent($row['content']);
-        $comment->setDateAdded($row['date_added']);
-        //$comment->setSignalement($row['signalement']);
-        return $comment;
+        $proposition = new Proposition();
+        $proposition->setId($row['id']);
+        $proposition->setChoix($row['choix']);
+        $proposition->setVrai($row['vrai']);        
+        return $proposition;
     }
 }

@@ -3,22 +3,22 @@
 namespace App\src\controller;//utilisation des namespace pour afin de ne pas à avoir à se soucier
 //si un nom a déjà été utilisé par une autre constante, fonction ou classe
 
-use App\src\model\DAO\BilletDAO;
-use App\src\model\DAO\CommentDAO;
+use App\src\model\DAO\QuestionDAO;
+use App\src\model\DAO\PropositionDAO;
 use App\templates\View;
 
 
 class BackController
 {
-    private $billetDAO;
-    private $commentDAO;    
+    private $questionDAO;
+    private $propositionDAO;    
 	private $view;
 	
 	
     public function __construct()
     {
-        $this->billetDAO = new BilletDAO();
-        $this->commentDAO = new CommentDAO();
+        $this->questionDAO = new QuestionDAO();
+        $this->propositionDAO = new PropositionDAO();
         $this->view = new View();        
     }
 

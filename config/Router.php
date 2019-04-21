@@ -5,7 +5,7 @@ namespace App\config;
 use App\src\controller\BackController;
 use App\src\controller\ErrorController;
 use App\src\controller\FrontController;
-use Exception;
+//use Exception;
 
 
 class Router
@@ -76,13 +76,11 @@ class Router
                     $this->backController->modifierBillet($_POST,$_POST['idBillet']);
                 }
                                 
-                else if($_GET['route'] === 'voirbillets') 
-                {
-                    $this->frontController->home();
+                else if($_GET['route'] === 'commencerTest'){
+                    $this->frontController->test();
                 }
                 
-                else if($_GET['route'] === 'espaceAdmin')
-                {
+                else if($_GET['route'] === 'espaceAdmin'){
                     $this->frontController->espaceAdmin();
                 }          
                        

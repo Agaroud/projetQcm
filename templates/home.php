@@ -8,31 +8,48 @@ $this->title = "Accueil";
 
   <header>
     <div class="entete">
-        <h1 >Billet simple pour l'Alaska</h1>
-        <h3 >Jean Forteroche</h3>
+        <h1 >QCM  prévention et sécurité incendie</h1>
+        <h3 >(Attention : pour chaque question, vous devez donner <strong>la</strong> ou <strong>les</strong> réponses  </h3>
     </div>
         <?php
-			if(isset($_SESSION['add_billet'])) {
-    		echo '<p class="notification">'.$_SESSION['add_billet'].'</p>';
-    		unset($_SESSION['add_billet']);
+			if(isset($_SESSION['envoi_form'])) {
+    		echo '<p class="notification">'.$_SESSION['envoi_form'].'</p>';
+    		unset($_SESSION['envoi_form']);
             }
-        ?>
-  <a href="../public/index.php?" id="retourAcc">Retour Ã  l'accueil</a>         
+            
+            if(isset($_SESSION['manque_reponse'])) {
+                echo '<p class="notification">'.$_SESSION['manque_reponse'].'</p>';
+                unset($_SESSION['manque_reponse']);
+            }
+        ?>         
   </header>  
   <section>
-        <?php 
-        
-        foreach ($billets as $billet)
+  	<!-- <form method="post" action="../public/index.php?route=cocherChoix"> -->
+  	
+        <?php       
+        foreach ($questions as $question)
         {
         ?>
-            <div class="articles">
-                <h2><?= htmlspecialchars_decode($billet->getTitle());?></h2>                
-                <p><?= htmlspecialchars_decode($billet->getContent());?>...<a href="../public/index.php?route=billet&idBillet=<?= htmlspecialchars($billet->getId());?>" id="listeComment">(voir la suite)</a></p>                
-                <p>CrÃ©Ã© le : <?= htmlspecialchars($billet->getDateAdded());?></p>
+            <div class="questions">
+                <h2><?= htmlspecialchars_decode($question->getTheme());?></h2>                
+                <h3><?= htmlspecialchars_decode($question->getSujet());?></h3>
+                <?php 
+                /*foreach ($propositions as $proposition)
+        		{*/
+        		?>
+        			<!-- <div class="propositions">      			
+        			
+        				<input type="checkbox" name="title" value="<?= htmlspecialchars_decode($proposition->getChoix());?>"><br>
+        		<?php
+                }        
+                ?>  	      	     
+            		</div>  		                
             </div>
             <br>
         <?php
         }        
         ?>
+        <input type="submit" value="Envoyer" id="submit" name="submit">	
+  	</form>   
   </section>
     

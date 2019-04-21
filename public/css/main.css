@@ -63,6 +63,11 @@ section{
     text-align : justify;
 }
 
+.commencerTest{
+	display : block;
+	text-align : center;
+}
+
 #apropos,#presentation{
 	color:white;
 }
@@ -76,7 +81,7 @@ section{
 }
 
 .Admin{
-	color:white;
+	color:black;
 	display: block;
 	text-align: right;
 	margin-right: 40px;
@@ -99,12 +104,18 @@ section{
 	margin:10px;
 }
 
-.ajoutbillet, .voirbillet, #retourAcc, #listsignals, #deconect{
+.ajoutbillet, .voirbillet, #listsignals, #deconect{
 	display: block;
 	text-align: right;
 	margin-right: 70px;
 	font-weight: bold;
 	color: white;
+}
+
+#retourAcc{
+	display: block;
+	margin-right: 70px;
+	text-align: right;	
 }
 
 .boutons{

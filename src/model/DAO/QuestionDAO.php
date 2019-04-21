@@ -2,22 +2,22 @@
 
 namespace App\src\model\DAO;
 
-use App\src\model\Billet;
+use App\src\model\Question;
 
 
-class BilletDAO extends DAO
+class QuestionDAO extends DAO
 {
     
-    public function getBillets()
+    public function getQuestions()
     {
-        $sql = 'SELECT id, title, SUBSTRING(content, 1, 500) AS content, date_added FROM billet ORDER BY id DESC';
+        $sql = 'SELECT * FROM questions ORDER BY RAND() LIMIT 1,2';
         $result = $this->sql($sql);
-        $billets = [];
+        $questions = [];
         foreach ($result as $row) {
-            $billetId = $row['id'];
-            $billets[$billetId] = $this->buildObject($row);
+            $questionId = $row['id'];
+            $questions[$questionId] = $this->buildObject($row);
         }
-        return $billets;
+        return $questions;
     }
 
     public function getBillet($idBillet)
@@ -69,12 +69,11 @@ class BilletDAO extends DAO
     
     private function buildObject(array $row)//nous permet de convertir chaque champ de la table en propriété de notre objet Billet
     {
-        $billet = new Billet();
-        $billet->setId($row['id']);
-        $billet->setTitle($row['title']);
-        $billet->setContent($row['content']);
-        $billet->setDateAdded($row['date_added']);
-        
-        return $billet;
+        $question= new Question();
+        $question->setId($row['id']);
+        $question->setTheme($row['theme']);
+        $question->setSujet($row['sujet']);
+               
+        return $question;
     }
 }

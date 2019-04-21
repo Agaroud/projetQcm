@@ -2,21 +2,21 @@
 
 namespace App\src\controller;
 
-use App\src\model\DAO\BilletDAO;
-use App\src\model\DAO\CommentDAO;
+use App\src\model\DAO\QuestionDAO;
+use App\src\model\DAO\PropositionDAO;
 use App\templates\View;
 
 class ErrorController
 {
     
-    private $billetDAO;
-    private $commentDAO;
+    private $questionDAO;
+    private $propositionDAO;
     private $view;
     
     public function __construct()
     {
-        $this->billetDAO = new BilletDAO();
-        $this->commentDAO = new CommentDAO();
+        $this->questionDAO = new QuestionDAO();
+        $this->propositionDAO = new PropositionDAO();
         $this->view = new View();
     }
     

@@ -1,7 +1,7 @@
 <?php	
 //parametres de connection
 const HOST = 'localhost';
-const DB_NAME = 'blogdelecrivain';
+const DB_NAME = 'qcm';
 const CHARSET = 'utf8';
 const DB_HOST = 'mysql:host='.HOST.';dbname='.DB_NAME.';charset='.CHARSET;
 const DB_USER = 'root';

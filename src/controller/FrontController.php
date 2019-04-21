@@ -2,27 +2,26 @@
 
 namespace App\src\controller;
 
-use App\src\model\DAO\BilletDAO;
-use App\src\model\DAO\CommentDAO;
+use App\src\model\DAO\QuestionDAO;
+use App\src\model\DAO\PropositionDAO;
 use App\templates\View;
-
 
 class FrontController
 {
-	private $billetDAO;
-    private $commentDAO;
+	private $questionDAO;
+    private $propositionDAO;
     private $view;    
     
 
     public function __construct()
 
     {
-        $this->billetDAO = new BilletDAO();
-        $this->commentDAO = new CommentDAO();
+        $this->questionDAO = new QuestionDAO();
+        $this->propositionDAO = new PropositionDAO();
         $this->view = new View();        
     }
 
-    public function addComment($post,$idBillet)
+   /* public function addComment($post,$idBillet)
     {
         if(isset($post['submit']) and !empty($post['pseudo']) and !empty($post['content'])){
             $commentDAO = new CommentDAO();
@@ -53,30 +52,30 @@ class FrontController
         }        
         $idBillet=$_POST['idBillet'];
         $this->billet($idBillet);
-    }    
+    }*/    
     
     public function premierepage()
     {        
         $this->view->render('premierepage');
-    }
+    }/*
     
     public function espaceAdmin()
     {
         $nb= $this->commentDAO->getSignalNumber();
         $billets = $this->billetDAO->getBillets();
         $this->view->render('homeAdmin', ['billets' => $billets,'nb' => $nb]);
-    }
+    }*/
     
-    public function home()
+    public function test()
     {    	
-        $billets = $this->billetDAO->getBillets();
-        $this->view->render('home', ['billets' => $billets]);
+        $questions = $this->questionDAO->getQuestions();
+        $this->view->render('test_qcm', ['questions' => $questions]);
     }
 
-    public function billet($idBillet)
+    /*public function billet($idBillet)
     {        
         $billet = $this->billetDAO->getBillet($idBillet);
         $comments = $this->commentDAO->getCommentsFromBillet($idBillet);
         $this->view->render('single', ['billet' => $billet,'comments' => $comments]);
-    }
+    }*/
 }
